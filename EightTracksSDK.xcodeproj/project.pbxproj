@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A73B4B26194D7918003AF0E6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73B4B25194D7918003AF0E6 /* Cocoa.framework */; };
+		A73B4B30194D7918003AF0E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A73B4B2E194D7918003AF0E6 /* InfoPlist.strings */; };
+		A73B4B34194D7918003AF0E6 /* EightTracksSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = A73B4B33194D7918003AF0E6 /* EightTracksSDK.m */; };
+		A73B4B3B194D7918003AF0E6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73B4B3A194D7918003AF0E6 /* XCTest.framework */; };
+		A73B4B3C194D7918003AF0E6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73B4B25194D7918003AF0E6 /* Cocoa.framework */; };
+		A73B4B3F194D7918003AF0E6 /* EightTracksSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73B4B22194D7918003AF0E6 /* EightTracksSDK.framework */; };
+		A73B4B45194D7918003AF0E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A73B4B43194D7918003AF0E6 /* InfoPlist.strings */; };
+		A73B4B47194D7918003AF0E6 /* EightTracksSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A73B4B46194D7918003AF0E6 /* EightTracksSDKTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A73B4B3D194D7918003AF0E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A73B4B19194D7918003AF0E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A73B4B21194D7918003AF0E6;
+			remoteInfo = EightTracksSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A73B4B22194D7918003AF0E6 /* EightTracksSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EightTracksSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73B4B25194D7918003AF0E6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A73B4B28194D7918003AF0E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A73B4B29194D7918003AF0E6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A73B4B2A194D7918003AF0E6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A73B4B2D194D7918003AF0E6 /* EightTracksSDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EightTracksSDK-Info.plist"; sourceTree = "<group>"; };
+		A73B4B2F194D7918003AF0E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A73B4B31194D7918003AF0E6 /* EightTracksSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EightTracksSDK-Prefix.pch"; sourceTree = "<group>"; };
+		A73B4B32194D7918003AF0E6 /* EightTracksSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EightTracksSDK.h; sourceTree = "<group>"; };
+		A73B4B33194D7918003AF0E6 /* EightTracksSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EightTracksSDK.m; sourceTree = "<group>"; };
+		A73B4B39194D7918003AF0E6 /* EightTracksSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EightTracksSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73B4B3A194D7918003AF0E6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A73B4B42194D7918003AF0E6 /* EightTracksSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EightTracksSDKTests-Info.plist"; sourceTree = "<group>"; };
+		A73B4B44194D7918003AF0E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A73B4B46194D7918003AF0E6 /* EightTracksSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EightTracksSDKTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A73B4B1E194D7918003AF0E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73B4B26194D7918003AF0E6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73B4B36194D7918003AF0E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73B4B3C194D7918003AF0E6 /* Cocoa.framework in Frameworks */,
+				A73B4B3B194D7918003AF0E6 /* XCTest.framework in Frameworks */,
+				A73B4B3F194D7918003AF0E6 /* EightTracksSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A73B4B18194D7918003AF0E6 = {
+			isa = PBXGroup;
+			children = (
+				A73B4B2B194D7918003AF0E6 /* EightTracksSDK */,
+				A73B4B40194D7918003AF0E6 /* EightTracksSDKTests */,
+				A73B4B24194D7918003AF0E6 /* Frameworks */,
+				A73B4B23194D7918003AF0E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A73B4B23194D7918003AF0E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A73B4B22194D7918003AF0E6 /* EightTracksSDK.framework */,
+				A73B4B39194D7918003AF0E6 /* EightTracksSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A73B4B24194D7918003AF0E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A73B4B25194D7918003AF0E6 /* Cocoa.framework */,
+				A73B4B3A194D7918003AF0E6 /* XCTest.framework */,
+				A73B4B27194D7918003AF0E6 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A73B4B27194D7918003AF0E6 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A73B4B28194D7918003AF0E6 /* Foundation.framework */,
+				A73B4B29194D7918003AF0E6 /* CoreData.framework */,
+				A73B4B2A194D7918003AF0E6 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A73B4B2B194D7918003AF0E6 /* EightTracksSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A73B4B32194D7918003AF0E6 /* EightTracksSDK.h */,
+				A73B4B33194D7918003AF0E6 /* EightTracksSDK.m */,
+				A73B4B2C194D7918003AF0E6 /* Supporting Files */,
+			);
+			path = EightTracksSDK;
+			sourceTree = "<group>";
+		};
+		A73B4B2C194D7918003AF0E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A73B4B2D194D7918003AF0E6 /* EightTracksSDK-Info.plist */,
+				A73B4B2E194D7918003AF0E6 /* InfoPlist.strings */,
+				A73B4B31194D7918003AF0E6 /* EightTracksSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A73B4B40194D7918003AF0E6 /* EightTracksSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				A73B4B46194D7918003AF0E6 /* EightTracksSDKTests.m */,
+				A73B4B41194D7918003AF0E6 /* Supporting Files */,
+			);
+			path = EightTracksSDKTests;
+			sourceTree = "<group>";
+		};
+		A73B4B41194D7918003AF0E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A73B4B42194D7918003AF0E6 /* EightTracksSDKTests-Info.plist */,
+				A73B4B43194D7918003AF0E6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A73B4B1F194D7918003AF0E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A73B4B21194D7918003AF0E6 /* EightTracksSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A73B4B4A194D7918003AF0E6 /* Build configuration list for PBXNativeTarget "EightTracksSDK" */;
+			buildPhases = (
+				A73B4B1D194D7918003AF0E6 /* Sources */,
+				A73B4B1E194D7918003AF0E6 /* Frameworks */,
+				A73B4B1F194D7918003AF0E6 /* Headers */,
+				A73B4B20194D7918003AF0E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EightTracksSDK;
+			productName = EightTracksSDK;
+			productReference = A73B4B22194D7918003AF0E6 /* EightTracksSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A73B4B38194D7918003AF0E6 /* EightTracksSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A73B4B4D194D7918003AF0E6 /* Build configuration list for PBXNativeTarget "EightTracksSDKTests" */;
+			buildPhases = (
+				A73B4B35194D7918003AF0E6 /* Sources */,
+				A73B4B36194D7918003AF0E6 /* Frameworks */,
+				A73B4B37194D7918003AF0E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A73B4B3E194D7918003AF0E6 /* PBXTargetDependency */,
+			);
+			name = EightTracksSDKTests;
+			productName = EightTracksSDKTests;
+			productReference = A73B4B39194D7918003AF0E6 /* EightTracksSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A73B4B19194D7918003AF0E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Norocketlab;
+				TargetAttributes = {
+					A73B4B38194D7918003AF0E6 = {
+						TestTargetID = A73B4B21194D7918003AF0E6;
+					};
+				};
+			};
+			buildConfigurationList = A73B4B1C194D7918003AF0E6 /* Build configuration list for PBXProject "EightTracksSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A73B4B18194D7918003AF0E6;
+			productRefGroup = A73B4B23194D7918003AF0E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A73B4B21194D7918003AF0E6 /* EightTracksSDK */,
+				A73B4B38194D7918003AF0E6 /* EightTracksSDKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A73B4B20194D7918003AF0E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73B4B30194D7918003AF0E6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73B4B37194D7918003AF0E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73B4B45194D7918003AF0E6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A73B4B1D194D7918003AF0E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73B4B34194D7918003AF0E6 /* EightTracksSDK.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73B4B35194D7918003AF0E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73B4B47194D7918003AF0E6 /* EightTracksSDKTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A73B4B3E194D7918003AF0E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A73B4B21194D7918003AF0E6 /* EightTracksSDK */;
+			targetProxy = A73B4B3D194D7918003AF0E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A73B4B2E194D7918003AF0E6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A73B4B2F194D7918003AF0E6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A73B4B43194D7918003AF0E6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A73B4B44194D7918003AF0E6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A73B4B48194D7918003AF0E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A73B4B49194D7918003AF0E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A73B4B4B194D7918003AF0E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EightTracksSDK/EightTracksSDK-Prefix.pch";
+				INFOPLIST_FILE = "EightTracksSDK/EightTracksSDK-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		A73B4B4C194D7918003AF0E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EightTracksSDK/EightTracksSDK-Prefix.pch";
+				INFOPLIST_FILE = "EightTracksSDK/EightTracksSDK-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		A73B4B4E194D7918003AF0E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EightTracksSDK.framework/Versions/A/EightTracksSDK";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EightTracksSDK/EightTracksSDK-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EightTracksSDKTests/EightTracksSDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A73B4B4F194D7918003AF0E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EightTracksSDK.framework/Versions/A/EightTracksSDK";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EightTracksSDK/EightTracksSDK-Prefix.pch";
+				INFOPLIST_FILE = "EightTracksSDKTests/EightTracksSDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A73B4B1C194D7918003AF0E6 /* Build configuration list for PBXProject "EightTracksSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73B4B48194D7918003AF0E6 /* Debug */,
+				A73B4B49194D7918003AF0E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A73B4B4A194D7918003AF0E6 /* Build configuration list for PBXNativeTarget "EightTracksSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73B4B4B194D7918003AF0E6 /* Debug */,
+				A73B4B4C194D7918003AF0E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A73B4B4D194D7918003AF0E6 /* Build configuration list for PBXNativeTarget "EightTracksSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73B4B4E194D7918003AF0E6 /* Debug */,
+				A73B4B4F194D7918003AF0E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A73B4B19194D7918003AF0E6 /* Project object */;
+}
