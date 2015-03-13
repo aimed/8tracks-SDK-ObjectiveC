@@ -7,7 +7,3 @@
 //
 
 #import "EightTracksSDK.h"
-
-@implementation EightTracksSDK
-
-@end

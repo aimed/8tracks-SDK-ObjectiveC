@@ -15,6 +15,29 @@
 		A73B4B3F194D7918003AF0E6 /* EightTracksSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73B4B22194D7918003AF0E6 /* EightTracksSDK.framework */; };
 		A73B4B45194D7918003AF0E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A73B4B43194D7918003AF0E6 /* InfoPlist.strings */; };
 		A73B4B47194D7918003AF0E6 /* EightTracksSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A73B4B46194D7918003AF0E6 /* EightTracksSDKTests.m */; };
+		A73B4B56194D7F9A003AF0E6 /* ETRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A73B4B54194D7F9A003AF0E6 /* ETRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A73B4B57194D7F9A003AF0E6 /* ETRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A73B4B55194D7F9A003AF0E6 /* ETRequest.m */; };
+		A74105EC1955A6CB00C6D929 /* ETFormDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A74105EA1955A6CB00C6D929 /* ETFormDataRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A74105ED1955A6CB00C6D929 /* ETFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A74105EB1955A6CB00C6D929 /* ETFormDataRequest.m */; };
+		A74105F01955E45600C6D929 /* ETAPIKeyManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A74105EE1955E45600C6D929 /* ETAPIKeyManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A74105F11955E45600C6D929 /* ETAPIKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A74105EF1955E45600C6D929 /* ETAPIKeyManager.m */; };
+		A759F79D1955684600F74B40 /* ETURL.h in Headers */ = {isa = PBXBuildFile; fileRef = A759F79B1955684600F74B40 /* ETURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A759F79E1955684600F74B40 /* ETURL.m in Sources */ = {isa = PBXBuildFile; fileRef = A759F79C1955684600F74B40 /* ETURL.m */; };
+		A768790D1AA3C44A003F17A9 /* EightTracksSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A73B4B32194D7918003AF0E6 /* EightTracksSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A793F27E194D94BF00E0A930 /* ETSession.h in Headers */ = {isa = PBXBuildFile; fileRef = A793F27C194D94BF00E0A930 /* ETSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A793F27F194D94BF00E0A930 /* ETSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A793F27D194D94BF00E0A930 /* ETSession.m */; };
+		A793F282194D972600E0A930 /* ETUser.h in Headers */ = {isa = PBXBuildFile; fileRef = A793F280194D972600E0A930 /* ETUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A793F283194D972600E0A930 /* ETUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A793F281194D972600E0A930 /* ETUser.m */; };
+		A793F286194D972F00E0A930 /* ETMix.h in Headers */ = {isa = PBXBuildFile; fileRef = A793F284194D972F00E0A930 /* ETMix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A793F287194D972F00E0A930 /* ETMix.m in Sources */ = {isa = PBXBuildFile; fileRef = A793F285194D972F00E0A930 /* ETMix.m */; };
+		A793F28A194D973C00E0A930 /* ETTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A793F288194D973C00E0A930 /* ETTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A793F28B194D973C00E0A930 /* ETTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A793F289194D973C00E0A930 /* ETTrack.m */; };
+		A793F28E194D974E00E0A930 /* ETSet.h in Headers */ = {isa = PBXBuildFile; fileRef = A793F28C194D974E00E0A930 /* ETSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A793F28F194D974E00E0A930 /* ETSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A793F28D194D974E00E0A930 /* ETSet.m */; };
+		A79F79E91AA349E40088A85B /* ETSmartID.h in Headers */ = {isa = PBXBuildFile; fileRef = A79F79E71AA349E40088A85B /* ETSmartID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79F79EA1AA349E40088A85B /* ETSmartID.m in Sources */ = {isa = PBXBuildFile; fileRef = A79F79E81AA349E40088A85B /* ETSmartID.m */; };
+		A7B68056194DACBA00E3457A /* ETUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B68054194DACBA00E3457A /* ETUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7B68057194DACBA00E3457A /* ETUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B68055194DACBA00E3457A /* ETUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +66,28 @@
 		A73B4B42194D7918003AF0E6 /* EightTracksSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EightTracksSDKTests-Info.plist"; sourceTree = "<group>"; };
 		A73B4B44194D7918003AF0E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A73B4B46194D7918003AF0E6 /* EightTracksSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EightTracksSDKTests.m; sourceTree = "<group>"; };
+		A73B4B54194D7F9A003AF0E6 /* ETRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRequest.h; sourceTree = "<group>"; };
+		A73B4B55194D7F9A003AF0E6 /* ETRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRequest.m; sourceTree = "<group>"; };
+		A74105EA1955A6CB00C6D929 /* ETFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFormDataRequest.h; sourceTree = "<group>"; };
+		A74105EB1955A6CB00C6D929 /* ETFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETFormDataRequest.m; sourceTree = "<group>"; };
+		A74105EE1955E45600C6D929 /* ETAPIKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETAPIKeyManager.h; sourceTree = "<group>"; };
+		A74105EF1955E45600C6D929 /* ETAPIKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETAPIKeyManager.m; sourceTree = "<group>"; };
+		A759F79B1955684600F74B40 /* ETURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETURL.h; sourceTree = "<group>"; };
+		A759F79C1955684600F74B40 /* ETURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETURL.m; sourceTree = "<group>"; };
+		A793F27C194D94BF00E0A930 /* ETSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSession.h; sourceTree = "<group>"; };
+		A793F27D194D94BF00E0A930 /* ETSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSession.m; sourceTree = "<group>"; };
+		A793F280194D972600E0A930 /* ETUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETUser.h; sourceTree = "<group>"; };
+		A793F281194D972600E0A930 /* ETUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETUser.m; sourceTree = "<group>"; };
+		A793F284194D972F00E0A930 /* ETMix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMix.h; sourceTree = "<group>"; };
+		A793F285194D972F00E0A930 /* ETMix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMix.m; sourceTree = "<group>"; };
+		A793F288194D973C00E0A930 /* ETTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETTrack.h; sourceTree = "<group>"; };
+		A793F289194D973C00E0A930 /* ETTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETTrack.m; sourceTree = "<group>"; };
+		A793F28C194D974E00E0A930 /* ETSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSet.h; sourceTree = "<group>"; };
+		A793F28D194D974E00E0A930 /* ETSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSet.m; sourceTree = "<group>"; };
+		A79F79E71AA349E40088A85B /* ETSmartID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSmartID.h; sourceTree = "<group>"; };
+		A79F79E81AA349E40088A85B /* ETSmartID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSmartID.m; sourceTree = "<group>"; };
+		A7B68054194DACBA00E3457A /* ETUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETUtils.h; sourceTree = "<group>"; };
+		A7B68055194DACBA00E3457A /* ETUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +154,22 @@
 		A73B4B2B194D7918003AF0E6 /* EightTracksSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A7929EA01AA38DE2005661EA /* Utils */,
+				A73B4B2C194D7918003AF0E6 /* Supporting Files */,
 				A73B4B32194D7918003AF0E6 /* EightTracksSDK.h */,
 				A73B4B33194D7918003AF0E6 /* EightTracksSDK.m */,
-				A73B4B2C194D7918003AF0E6 /* Supporting Files */,
+				A793F27C194D94BF00E0A930 /* ETSession.h */,
+				A793F27D194D94BF00E0A930 /* ETSession.m */,
+				A793F280194D972600E0A930 /* ETUser.h */,
+				A793F281194D972600E0A930 /* ETUser.m */,
+				A793F28C194D974E00E0A930 /* ETSet.h */,
+				A793F28D194D974E00E0A930 /* ETSet.m */,
+				A793F284194D972F00E0A930 /* ETMix.h */,
+				A793F285194D972F00E0A930 /* ETMix.m */,
+				A793F288194D973C00E0A930 /* ETTrack.h */,
+				A793F289194D973C00E0A930 /* ETTrack.m */,
+				A79F79E71AA349E40088A85B /* ETSmartID.h */,
+				A79F79E81AA349E40088A85B /* ETSmartID.m */,
 			);
 			path = EightTracksSDK;
 			sourceTree = "<group>";
@@ -144,6 +202,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A7929EA01AA38DE2005661EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A759F79B1955684600F74B40 /* ETURL.h */,
+				A759F79C1955684600F74B40 /* ETURL.m */,
+				A73B4B54194D7F9A003AF0E6 /* ETRequest.h */,
+				A73B4B55194D7F9A003AF0E6 /* ETRequest.m */,
+				A74105EA1955A6CB00C6D929 /* ETFormDataRequest.h */,
+				A74105EB1955A6CB00C6D929 /* ETFormDataRequest.m */,
+				A7B68054194DACBA00E3457A /* ETUtils.h */,
+				A7B68055194DACBA00E3457A /* ETUtils.m */,
+				A74105EE1955E45600C6D929 /* ETAPIKeyManager.h */,
+				A74105EF1955E45600C6D929 /* ETAPIKeyManager.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -151,6 +226,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A768790D1AA3C44A003F17A9 /* EightTracksSDK.h in Headers */,
+				A793F27E194D94BF00E0A930 /* ETSession.h in Headers */,
+				A74105EC1955A6CB00C6D929 /* ETFormDataRequest.h in Headers */,
+				A759F79D1955684600F74B40 /* ETURL.h in Headers */,
+				A7B68056194DACBA00E3457A /* ETUtils.h in Headers */,
+				A74105F01955E45600C6D929 /* ETAPIKeyManager.h in Headers */,
+				A793F28A194D973C00E0A930 /* ETTrack.h in Headers */,
+				A79F79E91AA349E40088A85B /* ETSmartID.h in Headers */,
+				A793F28E194D974E00E0A930 /* ETSet.h in Headers */,
+				A793F282194D972600E0A930 /* ETUser.h in Headers */,
+				A793F286194D972F00E0A930 /* ETMix.h in Headers */,
+				A73B4B56194D7F9A003AF0E6 /* ETRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73B4B57194D7F9A003AF0E6 /* ETRequest.m in Sources */,
+				A7B68057194DACBA00E3457A /* ETUtils.m in Sources */,
+				A79F79EA1AA349E40088A85B /* ETSmartID.m in Sources */,
+				A74105ED1955A6CB00C6D929 /* ETFormDataRequest.m in Sources */,
 				A73B4B34194D7918003AF0E6 /* EightTracksSDK.m in Sources */,
+				A74105F11955E45600C6D929 /* ETAPIKeyManager.m in Sources */,
+				A759F79E1955684600F74B40 /* ETURL.m in Sources */,
+				A793F28B194D973C00E0A930 /* ETTrack.m in Sources */,
+				A793F287194D972F00E0A930 /* ETMix.m in Sources */,
+				A793F27F194D94BF00E0A930 /* ETSession.m in Sources */,
+				A793F283194D972600E0A930 /* ETUser.m in Sources */,
+				A793F28F194D974E00E0A930 /* ETSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +484,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EightTracksSDK/EightTracksSDK-Prefix.pch";
 				INFOPLIST_FILE = "EightTracksSDK/EightTracksSDK-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -450,6 +549,7 @@
 				A73B4B4C194D7918003AF0E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A73B4B4D194D7918003AF0E6 /* Build configuration list for PBXNativeTarget "EightTracksSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +558,7 @@
 				A73B4B4F194D7918003AF0E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  EightTracksSDK.h
+//  ETUtils.h
 //  EightTracksSDK
 //
 //  Created by Maximilian Täschner on 15/06/14.
@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ETAPIKeyManager.h"
-#import "ETRequest.h"
-#import "ETSession.h"
-#import "ETSet.h"
+
+@interface ETUtils : NSObject
+
++(NSString *)URLEncodeWithString:(NSString*)string;
++(NSString *)serializeDictionary:(NSDictionary*)dict;
+
+@end
