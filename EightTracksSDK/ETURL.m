@@ -44,11 +44,25 @@ NSURL *kURISSL;
     return url;
 }
 
+-(void)setQueryParam:(id<ETURLQueryParam>)param {
+    NSDictionary *params = [param toQueryParams];
+    [self setQueryParams:params];
+}
+
 -(void)setQueryParam:(NSString *)param toObject:(id)object {
     if (_data == nil) {
         _data = [NSMutableDictionary new];
     }
     [_data setObject:object forKey:param];
+}
+
+-(void)setQueryParams:(NSDictionary *)dictionary {
+    for (NSString *key in dictionary) {
+        @autoreleasepool {
+            NSString *val = dictionary[key];
+            [self setQueryParam:key toObject:val];
+        }
+    }
 }
 
 -(NSURL *)toURL {

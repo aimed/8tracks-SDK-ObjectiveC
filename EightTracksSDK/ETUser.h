@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ETUserAvatar.h"
 
-@interface ETUser : NSObject
+@interface ETUser : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong, readonly) NSNumber *id;
 @property (nonatomic, strong, readonly) NSString *login;
@@ -16,7 +17,7 @@
 @property (nonatomic, strong, readonly) NSString *webPath;
 @property (nonatomic, strong, readonly) NSString *bio;
 @property (nonatomic, strong, readonly) NSNumber *followsCount;
-@property (nonatomic, strong, readonly) NSDictionary *avatar;
+@property (nonatomic, strong, readonly) ETUserAvatar *avatar;
 @property (nonatomic, readonly)         BOOL subscribed;
 @property (nonatomic, readonly)         BOOL followedBySessionUser;
 @property (nonatomic, strong, readonly) NSString *location;

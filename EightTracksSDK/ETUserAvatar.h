@@ -7,8 +7,9 @@
 //
 
 #import "MTLModel.h"
+#import <Mantle.h>
 
-@interface ETUserAvatar : MTLModel
+@interface ETUserAvatar : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong, readonly) NSURL *sq56;
 @property (nonatomic, strong, readonly) NSURL *sq100;
 @property (nonatomic, strong, readonly) NSURL *sq133;

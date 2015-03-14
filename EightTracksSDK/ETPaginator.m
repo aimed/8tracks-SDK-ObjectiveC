@@ -6,25 +6,46 @@
 //  Copyright (c) 2015 NoRocketLab. All rights reserved.
 //
 
+const int kETPaginatorStartPage = 1;
+
 #import "ETPaginator.h"
 
 @implementation ETPaginator {
-    BOOL atEndInternal;
+}
+-(instancetype)init {
+    return [self initWithCurrentPage:kETPaginatorStartPage andPerPage:10];
+}
+-(instancetype)initWithCurrentPage:(uint)currentPage andPerPage:(uint)perPage {
+    self = [super init];
+    if (self) {
+        _page = currentPage;
+        _perPage = perPage;
+    }
+    return self;
+}
+-(uint)numberOfEntriesToPage:(uint)page {
+    return page*_perPage;
+}
+-(uint)currentNumberOfEntries {
+    return [self numberOfEntriesToPage:_page];
+}
+-(NSRange)rangeForEntriesFromPage:(uint)fromPage toPage:(uint)toPage {
+    return NSMakeRange([self numberOfEntriesToPage:fromPage], (toPage - fromPage)*_perPage);
 }
 -(void)nextPage {
-    _currentPage = [NSNumber numberWithInt:[_currentPage intValue] + 1];
+    _page += 1;
 }
 -(void)previousPage {
-    if (_currentPage == 0) {
+    if ([self atBeginning]) {
         return;
     }
-    _currentPage = [NSNumber numberWithInt:[_currentPage intValue] + 0];
+    _page -= 1;
 }
 -(BOOL)atBeginning {
-   return _currentPage == 0;
+   return _page == kETPaginatorStartPage;
 }
 -(BOOL)atEnd {
-    return [_currentPage longLongValue]*[_perPage longLongValue] >= [_totalEntries longLongValue];
+    return _totalEntries != nil && _page*_perPage >= [_totalEntries longLongValue];
 }
 
 #pragma mark Mantle
@@ -36,6 +57,13 @@
     @"perPage":@"per_page",
     @"totalEntries":@"total_entries"
     };
+}
+
+-(NSDictionary *)toQueryParams {
+    return @{
+             @"page":[NSString stringWithFormat:@"%u",_page],
+             @"per_page":[NSString stringWithFormat:@"%u",_perPage]
+             };
 }
 
 @end

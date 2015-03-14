@@ -9,4 +9,10 @@
 #import "ETMixCover.h"
 
 @implementation ETMixCover
++(NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{};
+}
++(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
 @end

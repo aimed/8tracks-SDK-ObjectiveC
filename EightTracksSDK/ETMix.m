@@ -12,18 +12,40 @@
 #import "ETSmartID.h"
 #import "ETSession.h"
 
-NSString *const ETMixCoverSizeSQ56 = @"sq56";
-NSString *const ETMixCoverSizeSQ500 = @"sq500";
-
-
-
 @interface ETMix ()
 -(void)updateWithDict:(NSDictionary *)dict;
 @end
 
 
-
 @implementation ETMix
+
++(NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"webPath":@"web_path",
+             @"playsCount":@"plays_count",
+             @"tagList":@"tag_list",
+             @"trackCount":@"track_count",
+             @"likedBySessionUser":@"liked_by_current_user",
+             @"cover":@"cover_urls"
+             };
+}
+
++(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
+    if ([key isEqualToString:@"user"]) {
+        return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETUser class]];
+    } else if ([key isEqualToString:@"cover"]) {
+        return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETMixCover class]];
+    }
+    return nil;
+}
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error {
+    self = [super initWithDictionary:dictionaryValue error:error];
+    if (self == nil) return nil;
+    _tracksPlayed = [NSMutableArray new];
+    return self;
+}
+
 -(ETMix *)initWithDict:(NSDictionary *)dict {
     self = [super init];
     if (self) {
@@ -51,24 +73,38 @@ NSString *const ETMixCoverSizeSQ500 = @"sq500";
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key {
 }
 +(void)mixSetBySmartID:(ETSmartID *)smartID
+         withPaginator:(ETPaginator *)paginator
                session:(ETSession *)session
-              complete:(ETRequestCompletion)handler {
+              complete:(ETRequestCompletion)handler
+{
+    
+    if (paginator == nil)
+    {
+        paginator = [ETPaginator new];
+    }
+    
     ETURL *url = [ETURL URLWithEndpoint:[NSString stringWithFormat:@"mix_sets/%@", smartID]];
-    [url setQueryParam:@"include" toObject:@"mixes[user,cover_images,liked,user_with_followed]"];
+    [url setQueryParam:@"include" toObject:@"mixes[user,cover_images,liked,user_with_followed],pagination"];
+    [url setQueryParam:paginator];
     ETRequest *request = [[ETRequest alloc] initWithURL:url
                                              andSession:session
                                                complete:^(NSError *err, id result) {
         NSMutableArray *mixes = nil;
         if (!err)
         {
+            NSDictionary *mixSet = result[@"mix_set"];
             mixes = [NSMutableArray new];
-            NSArray *mixesJSON = result[@"mix_set"][@"mixes"];
+            NSArray *mixesJSON = mixSet[@"mixes"];
+            
             for (NSDictionary* mix in mixesJSON)
             {
-                ETMix *mixObj = [[ETMix alloc] initWithDict:mix];
+                ETMix *mixObj = [MTLJSONAdapter modelOfClass:[ETMix class] fromJSONDictionary:mix error:nil];
                 [mixes addObject:mixObj];
                 [mixObj setRequestedWithSession: session != nil];
             }
+            
+            // update pagination
+            [paginator setTotalEntries:mixSet[@"total_entries"]];
         }
         handler(err, mixes);
     }];
@@ -113,6 +149,22 @@ NSString *const ETMixCoverSizeSQ500 = @"sq500";
         }
         handler(err, result);
     }];
+}
+
+-(BOOL)isEqual:(id)object {
+    if (self == object) {
+        return YES;
+    }
+    
+    if (![object isKindOfClass:[ETMix class]]) {
+        return NO;
+    }
+    
+    return [self isEqualToETMix:object];
+}
+
+-(BOOL)isEqualToETMix:(ETMix *)object {
+    return self.id == object.id;
 }
 
 #pragma mark NSCoding

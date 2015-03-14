@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 
-@interface ETMixCover : MTLModel
+@interface ETMixCover : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong, readonly) NSURL *sq56;
 @property (nonatomic, strong, readonly) NSURL *sq100;
 @property (nonatomic, strong, readonly) NSURL *sq133;
