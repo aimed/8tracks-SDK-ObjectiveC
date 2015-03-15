@@ -23,7 +23,7 @@
 +(instancetype) smartIDAllSortBy:(ETSmartIDSorting)sorting;
 +(instancetype) smartIDWithTags:(NSArray *)tags sortBy:(ETSmartIDSorting)sorting;
 +(instancetype) smartIDWithArtist:(NSString *)artist;
-+(instancetype) smartIDWithKeyword:(NSString *)keyword;
++(instancetype) smartIDWithKeyword:(NSString *)keyword sortBy:(ETSmartIDSorting)sorting;
 +(instancetype) smartIDWithDJ:(ETUser *)user;
 +(instancetype) smartIDWithLikedBy:(ETUser *)user;
 +(instancetype) smartIDWithSimiliarTo:(ETMix *)mix;

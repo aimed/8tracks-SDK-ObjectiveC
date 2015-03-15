@@ -10,11 +10,13 @@
 
 #import "ETUser.h"
 #import "ETMix.h"
+#import "ETUtils.h"
 
 NSString *const SmartIDTypeAll = @"all";
 NSString *const SmartIDTypeLikedBy = @"liked";
 NSString *const SmartIDTypeListened = @"listened";
 NSString *const SmartIDTypeSimilarTo = @"similar";
+NSString *const SmartIDTypeKeyword = @"keyword";
 
 @interface ETSmartID ()
 @property (nonatomic, strong) NSMutableArray *components;
@@ -58,8 +60,13 @@ NSString *const SmartIDTypeSimilarTo = @"similar";
     return smartID;
 }
 
-+(instancetype) smartIDWithKeyword:(NSString *)keyword {
++(instancetype) smartIDWithKeyword:(NSString *)keyword sortBy:(ETSmartIDSorting)sorting {
     ETSmartID *smartID = [ETSmartID new];
+    smartID.components = [NSMutableArray arrayWithObjects:
+                          SmartIDTypeKeyword,
+                          [self encodeSlug:keyword],
+                          nil];
+    smartID.sorting = sorting;
     return smartID;
 }
 
@@ -138,7 +145,7 @@ NSString *const SmartIDTypeSimilarTo = @"similar";
 }
 
 +(NSString *)encodeSlug:(NSString *)input {
-    return @"";
+    return [ETUtils URLEncodeWithString:input];
 }
 
 @end

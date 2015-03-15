@@ -24,7 +24,7 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 @property (nonatomic, retain, readonly) NSString   *path;
 @property (nonatomic, retain, readonly) NSString   *webPath;
 @property (nonatomic, retain, readonly) NSString   *name;
-@property (nonatomic, retain, readonly) NSString   *description;
+@property (nonatomic, retain, readonly) NSString   *mixDescription;
 @property (nonatomic, retain, readonly) NSNumber   *playsCount;
 @property (nonatomic, retain, readonly) NSNumber   *likesCount;
 @property (nonatomic, retain, readonly) NSString   *certification; // @todo enum?

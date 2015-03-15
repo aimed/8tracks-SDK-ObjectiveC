@@ -26,7 +26,8 @@
              @"tagList":@"tag_list",
              @"trackCount":@"track_count",
              @"likedBySessionUser":@"liked_by_current_user",
-             @"cover":@"cover_urls"
+             @"cover":@"cover_urls",
+             @"mixDescription":@"description"
              };
 }
 
