@@ -25,6 +25,7 @@
              @"playsCount":@"plays_count",
              @"tagList":@"tag_list",
              @"trackCount":@"track_count",
+             @"likesCount":@"likes_count",
              @"likedBySessionUser":@"liked_by_current_user",
              @"cover":@"cover_urls",
              @"mixDescription":@"description"
@@ -36,6 +37,8 @@
         return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETUser class]];
     } else if ([key isEqualToString:@"cover"]) {
         return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETMixCover class]];
+    } else if ([key isEqualToString:@"likedBySessionUser"]) {
+        return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
     }
     return nil;
 }
