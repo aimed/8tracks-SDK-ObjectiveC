@@ -45,7 +45,7 @@ NSString *const ETSessionStateChangeNotification = @"ETSessionStateChangeNotific
         // login successfull
         if (!err) {
             _token = result[@"user"][@"user_token"];
-            _user = [MTLJSONAdapter modelOfClass:[ETUser class] fromJSONDictionary:result[@"user"] error:nil];//[[ETUser alloc] initWithDict:result[@"user"]];
+            _user = [MTLJSONAdapter modelOfClass:[ETUser class] fromJSONDictionary:result[@"user"] error:nil];
             [self setSessionState:ETSessionStateTokenValid];
         }
         handler(err, self);

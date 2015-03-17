@@ -16,12 +16,11 @@
 @property (nonatomic, strong, readonly) NSString *path;
 @property (nonatomic, strong, readonly) NSString *webPath;
 @property (nonatomic, strong, readonly) NSString *bio;
+@property (nonatomic, strong, readonly) NSArray  *presetSmartIDs;
 @property (nonatomic, strong, readonly) NSNumber *followsCount;
 @property (nonatomic, strong, readonly) ETUserAvatar *avatar;
 @property (nonatomic, readonly)         BOOL subscribed;
 @property (nonatomic, readonly)         BOOL followedBySessionUser;
 @property (nonatomic, strong, readonly) NSString *location;
-
--(ETUser *)initWithDict:(NSDictionary *)dict;
 
 @end

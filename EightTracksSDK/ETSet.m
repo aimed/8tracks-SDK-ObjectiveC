@@ -133,7 +133,7 @@ static ETSet *activeSet;
     {
         if (!err) {
             _smartID = [ETSmartID smartIDFromString:result[@"smart_id"]];
-            ETMix *mix = [[ETMix alloc] initWithDict:result[@"next_mix"]];
+            ETMix *mix = [MTLJSONAdapter modelOfClass:[ETMix class] fromJSONDictionary:result[@"next_mix"] error:nil];
             [self playMix:mix complete:handler];
         } else {
             handler(err, nil);
@@ -154,30 +154,6 @@ static ETSet *activeSet;
         handler(err, set);
     }];
     [request send];
-}
-
-#pragma mark NSCODING
-
--(instancetype)initWithCoder:(NSCoder *)aCoder {
-    self = [super init];
-    if (self) {
-        _token = [aCoder decodeObjectForKey:@"token"];
-        _atBeginning = [aCoder decodeBoolForKey:@"at_beginning"];
-        _atEnd = [aCoder decodeBoolForKey:@"at_end"];
-        _atLastTrack = [aCoder decodeBoolForKey:@"at_last_track"];
-        _currentMix = [aCoder decodeObjectOfClass:[ETMix class] forKey:@"current_mix"];
-        _currentTrack = [aCoder decodeObjectOfClass:[ETTrack class] forKey:@"current_track"];
-    }
-    return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:_token forKey:@"token"];
-    [aCoder encodeBool:_atBeginning forKey:@"at_beginning"];
-    [aCoder encodeBool:_atEnd forKey:@"at_end"];
-    [aCoder encodeBool:_atLastTrack forKey:@"at_last_track"];
-    [aCoder encodeObject:_currentMix forKey:@"current_mix"];
-    [aCoder encodeObject:_currentTrack forKey:@"current_track"];
 }
 
 @end

@@ -10,9 +10,7 @@
 
 @implementation ETUserAvatar
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
-    return @{
-             @"sq56":@"sq56"
-             };
+    return @{};
 }
 +(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];

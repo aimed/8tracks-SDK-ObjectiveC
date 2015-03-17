@@ -14,7 +14,7 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 
 @class ETSession;
 
-@interface ETSet : NSObject <NSCoding>
+@interface ETSet : NSObject
 
 @property (nonatomic, strong, readwrite) ETSession *session;
 @property (nonatomic, strong, readonly) NSString *token;

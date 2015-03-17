@@ -61,7 +61,9 @@
     [self setValuesForKeysWithDictionary:dict];
     if (dict[@"user"])
     {
-        _user = [[ETUser alloc] initWithDict:dict[@"user"]];
+        _user = [MTLJSONAdapter modelOfClass:[ETUser class]
+                          fromJSONDictionary:dict[@"user"]
+                                       error:nil];
     }
     _webPath = dict[@"web_path"];
     _playsCount = dict[@"plays_count"];
@@ -170,8 +172,5 @@
 -(BOOL)isEqualToETMix:(ETMix *)object {
     return self.id == object.id;
 }
-
-#pragma mark NSCoding
-
 
 @end

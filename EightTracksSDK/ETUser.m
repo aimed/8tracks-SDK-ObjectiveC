@@ -7,6 +7,7 @@
 //
 
 #import "ETUser.h"
+#import "ETSmartID.h"
 #import <Mantle.h>
 
 @implementation ETUser
@@ -16,13 +17,16 @@
              @"webPath":@"web_path",
              @"followsCount":@"follows_count",
              @"avatar":@"avatar_urls",
-             @"followedBySessionUser":@"followed_by_current_user"
+             @"followedBySessionUser":@"followed_by_current_user",
+             @"presetSmartIDs":@"preset_smart_ids"
              };
 }
 
 +(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     if ([key isEqualToString:@"avatar"]) {
         return [self avatarJSONValueTransformer];
+    } else if ([key isEqualToString:@"presetSmartIDs"]) {
+        return [self presetSmartIDsValueTransformer];
     }
     return nil;
 }
@@ -31,27 +35,21 @@
     return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETUserAvatar class]];
 }
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error {
-    self = [super initWithDictionary:dictionaryValue error:error];
-    //_avatar = [MTLJSONAdapter modelOfClass:[ETUserAvatar class] fromJSONDictionary:dictionaryValue[@"avatar_urls"] error:nil];
-    return self;
++(NSDictionary *)encodingBehaviorsByPropertyKey {
+    return @{
+             @"presetSmartIDs":[NSNumber numberWithInt:MTLModelEncodingBehaviorExcluded]
+             };
 }
 
--(ETUser *)initWithDict:(NSDictionary *)dict {
-    self = [super init];
-    if (self && dict) {
-        _id = dict[@"id"];
-        _login = dict[@"login"];
-        _path = dict[@"path"];
-        _webPath = dict[@"web_path"];
-        _bio = dict[@"bio"];
-        _followsCount = dict[@"follows_count"];
-        _avatar = [MTLJSONAdapter modelOfClass:ETUserAvatar.class fromJSONDictionary:dict[@"avatar_urls"] error:nil];//dict[@"avatar_urls"];
-        _location = dict[@"location"];
-        _subscribed = [(NSNumber *)dict[@"subscribed"] boolValue];
-        _followedBySessionUser = [(NSNumber *)dict[@"followed_by_current_user"] boolValue];
-    }
-    return self;
++(NSValueTransformer *)presetSmartIDsValueTransformer {
+    return [MTLValueTransformer transformerWithBlock:^NSArray *(NSArray *presets) {
+        NSMutableArray *smartIDs = [NSMutableArray new];
+        for (NSString *smartIDString in presets)
+        {
+            [smartIDs addObject:[ETSmartID smartIDFromString:smartIDString]];
+        }
+        return smartIDs;
+    }];
 }
 
 @end
