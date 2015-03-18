@@ -13,7 +13,7 @@
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"webPath":@"web_path",
-             @"smartID":@"smartID"
+             @"smartID":@"smart_id"
              };
 }
 
