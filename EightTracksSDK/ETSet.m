@@ -104,7 +104,6 @@ static ETSet *activeSet;
 }
 -(void)skipTrack:(ETRequestCompletion)handler {
     NSString *endpoint = [NSString stringWithFormat:@"sets/%@/skip", _token];
-    
     ETURL *url = [ETURL URLWithEndpoint:endpoint];
     [url setQueryParam:@"mix_id" toObject:[_currentMix.id stringValue]];
     

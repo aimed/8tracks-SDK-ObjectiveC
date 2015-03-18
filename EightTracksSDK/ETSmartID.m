@@ -17,6 +17,7 @@ NSString *const SmartIDTypeLikedBy = @"liked";
 NSString *const SmartIDTypeListened = @"listened";
 NSString *const SmartIDTypeSimilarTo = @"similar";
 NSString *const SmartIDTypeKeyword = @"keyword";
+NSString *const SmartIDTypeRecommended = @"recommended";
 
 @interface ETSmartID ()
 @property (nonatomic, strong) NSMutableArray *components;
@@ -45,7 +46,7 @@ NSString *const SmartIDTypeKeyword = @"keyword";
 
 +(instancetype) smartIDAllSortBy:(ETSmartIDSorting)sorting {
     ETSmartID *smartID = [ETSmartID new];
-    smartID.components = [NSMutableArray arrayWithObject:SmartIDTypeAll];
+    [smartID.components addObject:SmartIDTypeAll];
     smartID.sorting = sorting;
     return smartID;
 }
@@ -63,9 +64,10 @@ NSString *const SmartIDTypeKeyword = @"keyword";
 +(instancetype) smartIDWithKeyword:(NSString *)keyword sortBy:(ETSmartIDSorting)sorting {
     ETSmartID *smartID = [ETSmartID new];
     smartID.components = [NSMutableArray arrayWithObjects:
-                          SmartIDTypeKeyword,
-                          [self encodeSlug:keyword],
-                          nil];
+                            SmartIDTypeKeyword,
+                            [self encodeSlug:keyword],
+                            nil
+                          ];
     smartID.sorting = sorting;
     return smartID;
 }
@@ -107,11 +109,12 @@ NSString *const SmartIDTypeKeyword = @"keyword";
 
 +(instancetype) smartIDRecommended {
     ETSmartID *smartID = [ETSmartID new];
+    smartID.components = [NSMutableArray arrayWithObject:SmartIDTypeRecommended];
     return smartID;
 }
 
 +(NSString *)sortingToString:(ETSmartIDSorting)sorting {
-    NSString *result = @"";
+    NSString *result = nil;
     switch (sorting) {
         case ETSmartIDSortingRECENT:
             result = @"recent";
@@ -145,7 +148,12 @@ NSString *const SmartIDTypeKeyword = @"keyword";
 }
 
 +(NSString *)encodeSlug:(NSString *)input {
-    return [ETUtils URLEncodeWithString:input];
+    NSMutableString *string = [NSMutableString stringWithString:input];
+    [string replaceOccurrencesOfString:@"_" withString:@"__" options:0 range:NSMakeRange(0, [string length])];
+    [string replaceOccurrencesOfString:@" " withString:@"_" options:0 range:NSMakeRange(0, [string length])];
+    [string replaceOccurrencesOfString:@"/" withString:@"\\" options:0 range:NSMakeRange(0, [string length])];
+    [string replaceOccurrencesOfString:@"." withString:@"^" options:0 range:NSMakeRange(0, [string length])];
+    return [ETUtils URLEncodeWithString:string];
 }
 
 @end

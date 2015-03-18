@@ -45,9 +45,11 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
          withPaginator:(ETPaginator *)paginator
                session:(ETSession *)session
               complete:(ETRequestCompletion)handler;
+
 -(void)getForID:(NSNumber *)mixID
         session:(ETSession *)session
        complete:(ETRequestCompletion)handler;
+
 -(void)like:(BOOL)yesOrNo
     session:(ETSession *)session
    complete:(ETRequestCompletion)handler;
