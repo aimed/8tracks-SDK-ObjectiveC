@@ -110,7 +110,9 @@
             }
             
             // update pagination
-            [paginator setTotalEntries:mixSet[@"total_entries"]];
+            NSNumber *totalEntries = mixSet[@"pagination"][@"total_entries"];
+            [paginator setTotalEntries:totalEntries];
+            // TODO actually fix this
         }
         handler(err, mixes);
     }];
