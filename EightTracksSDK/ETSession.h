@@ -27,6 +27,7 @@ typedef enum : NSUInteger {
 //
 // Protocol
 //
+@class ETSession;
 @protocol ETSessionStateChangeListener
 -(void)sessionStateChange:(NSNotification *)aNotification;
 @end

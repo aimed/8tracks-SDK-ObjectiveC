@@ -37,6 +37,7 @@ NSString *const ETSessionStateChangeNotification = @"ETSessionStateChangeNotific
                     complete:(ETRequestCompletion)handler
 {
     ETURL *url = [ETURL URLWithSSLEndpoint:@"sessions"];
+    [url setQueryParam:@"include" toObject:[ETUser includesToString:ETUserIncludesAll]];
     ETFormDataRequest *request;
     request = [[ETFormDataRequest alloc]
                initWithURL:url
