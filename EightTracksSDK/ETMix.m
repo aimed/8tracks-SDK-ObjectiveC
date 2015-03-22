@@ -22,7 +22,7 @@
     return @{
              @"webPath":@"web_path",
              @"playsCount":@"plays_count",
-             @"tagList":@"tag_list",
+             @"tagListCache":@"tag_list_cache",
              @"trackCount":@"track_count",
              @"likesCount":@"likes_count",
              @"likedBySessionUser":@"liked_by_current_user",
@@ -38,15 +38,18 @@
         return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETMixCover class]];
     } else if ([key isEqualToString:@"likedBySessionUser"]) {
         return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
+    } else if ([key isEqualToString:@"tagListCache"]) {
+        return [self tagListCacheJSONValueTransformer];
     }
     return nil;
 }
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error {
-    self = [super initWithDictionary:dictionaryValue error:error];
-    if (self == nil) return nil;
-    if (dictionaryValue[@"tracks_played"] == nil) _tracksPlayed = [NSMutableArray new];
-    return self;
++(NSValueTransformer *)tagListCacheJSONValueTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSString *string) {
+        return [string componentsSeparatedByString:@", "];
+    } reverseBlock:^id(NSArray *array) {
+        return [array componentsJoinedByString:@", "];
+    }];
 }
 
 +(void)mixSetBySmartID:(ETSmartID *)smartID

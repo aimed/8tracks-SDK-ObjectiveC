@@ -31,5 +31,5 @@
 +(instancetype) smartIDSocialFeedForUser:(ETUser *)user;
 +(instancetype) smartIDListened;
 +(instancetype) smartIDRecommended;
-
++(NSString *)encodeSlug:(NSString *)input;
 @end

@@ -31,18 +31,17 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong, readonly) NSString   *webPath;
 @property (nonatomic, strong, readonly) NSString   *name;
 @property (nonatomic, strong, readonly) NSString   *mixDescription;
-@property (nonatomic, strong, readonly) NSString   *tagListCache; // @todo add to model
+@property (nonatomic, strong, readonly) NSArray    *tagListCache;
 @property (nonatomic, strong, readonly) NSNumber   *playsCount;
 @property (nonatomic, strong, readonly) NSNumber   *likesCount;
 @property (nonatomic, strong, readonly) NSString   *certification; // @todo enum?
-@property (nonatomic, strong, readonly) NSArray    *tagList;
 @property (nonatomic, strong, readonly) NSNumber   *duration;
 @property (nonatomic, strong, readonly) NSNumber   *trackCount;
 @property (nonatomic, readonly)         BOOL       nsfw;
 @property (nonatomic, readonly)         BOOL       likedBySessionUser;
 @property (nonatomic, readwrite)        BOOL       requestedWithSession;
 @property (nonatomic, strong, readonly) ETMixCover *cover;
-@property (nonatomic, strong, readonly) NSMutableArray *tracksPlayed;
+@property (nonatomic, strong, readwrite) NSMutableArray *tracksPlayed;
 @property (nonatomic, strong, readonly) NSDate     *firstPublishedAt;
 @property (nonatomic, strong, readonly) ETUser     *user;
 

@@ -18,12 +18,12 @@ NSString *const SmartIDTypeListened = @"listened";
 NSString *const SmartIDTypeSimilarTo = @"similar";
 NSString *const SmartIDTypeKeyword = @"keyword";
 NSString *const SmartIDTypeRecommended = @"recommended";
+NSString *const SmartIDTypeTags = @"tags";
 
 @interface ETSmartID ()
 @property (nonatomic, strong) NSMutableArray *components;
 @property (nonatomic, strong) NSString *smartID;
 @property (nonatomic) ETSmartIDSorting sorting;
-+(NSString *)encodeSlug:(NSString *)input;
 +(NSString *)sortingToString:(ETSmartIDSorting)sorting;
 @end
 
@@ -53,6 +53,13 @@ NSString *const SmartIDTypeRecommended = @"recommended";
 
 +(instancetype) smartIDWithTags:(NSArray *)tags sortBy:(ETSmartIDSorting)sorting {
     ETSmartID *smartID = [ETSmartID new];
+    [smartID.components addObject:SmartIDTypeTags];
+    
+    for (NSString *tag in tags)
+    {
+        [smartID.components addObject:[self encodeSlug:tag]];
+    }
+    smartID.sorting = sorting;
     return smartID;
 }
 

@@ -37,6 +37,10 @@ static ETSet *activeSet;
         _skipAllowed = [(NSNumber *)dict[@"skip_allowed"] boolValue];
         _atLastTrack = [(NSNumber *)dict[@"at_last_track"] boolValue];
         _currentTrack = [[ETTrack alloc] initWithDict:dict[@"track"]];
+        if (_currentMix.tracksPlayed == nil)
+        {
+            _currentMix.tracksPlayed = [NSMutableArray new];
+        }
         [_currentMix.tracksPlayed addObject:_currentTrack];
     }
 }
