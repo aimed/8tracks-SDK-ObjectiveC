@@ -31,7 +31,6 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 @class ETSession;
 
 @interface ETUser : MTLModel <MTLJSONSerializing>
-
 @property (nonatomic, strong, readonly) NSNumber *id;
 @property (nonatomic, strong, readonly) NSString *login;
 @property (nonatomic, strong, readonly) NSString *path;
@@ -52,6 +51,8 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 @property (nonatomic, strong, readonly) NSArray *recentMixes;
 @property (nonatomic, strong, readonly) NSArray *collections;
 
--(void)fetch:(ETUserIncludes)includes session:(ETSession *)session complete:(ETRequestCompletion)handler;
+-(void)updateProperties:(NSString *)includes
+                session:(ETSession *)session
+               complete:(ETRequestCompletion)handler;
 +(NSString *)includesToString:(ETUserIncludes)includes;
 @end

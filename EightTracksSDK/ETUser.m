@@ -13,7 +13,6 @@
 #import "ETRequest.h"
 
 @interface ETUser ()
-- (BOOL)updateWithJSON:(NSDictionary*)json error:(NSError**)error;
 @end
 
 @implementation ETUser
@@ -28,6 +27,7 @@
              @"favoritesCount":@"favorites_count",
              @"memberSince":@"member_since",
              @"topTags":@"top_tags",
+             @"recentMixes":@"recent_mixes",
              @"avatar":@"avatar_urls",
              @"followedBySessionUser":@"followed_by_current_user",
              };
@@ -41,6 +41,8 @@
     } else if ([key isEqualToString:@"collections"]) {
         return [self collectionJSONValueTransformer];
     } else if ([key isEqualToString:@"topTags"]) {
+    } else if ([key isEqualTo:@"recentMixes"]) {
+        return [MTLValueTransformer mtl_JSONArrayTransformerWithModelClass:[ETMix class]];
     }
     return nil;
 }
@@ -70,13 +72,13 @@
     }];
 }
 
--(void)fetch:(ETUserIncludes)includes
+-(void)updateProperties:(NSString *)includes
      session:(ETSession *)session
     complete:(ETRequestCompletion)handler
 {
     NSString *endpoint = [NSString stringWithFormat:@"/users/%@", self.id.stringValue];
     ETURL *url = [ETURL URLWithEndpoint:endpoint];
-    [url setQueryParam:@"include" toObject:[ETUser includesToString:includes]];
+    [url setQueryParam:@"include" toObject:includes];
     ETRequest *request;
     request = [[ETRequest alloc]
                initWithURL:url
@@ -84,29 +86,19 @@
                complete:^(NSError *err, id result)
     {
         if (!err) {
-            [self updateWithJSON:result[@"user"] error:nil];
+            [self updateWithJSON:result[@"user"]];
         }
         handler(err, result);
     }];
     [request send];
 }
 
-- (BOOL)updateWithJSON:(NSDictionary*)json error:(NSError**)error
+- (void)updateWithJSON:(NSDictionary*)json
 {
-    // create a temporary object then merge it by its JSON keys
-    ETUser *model = [MTLJSONAdapter modelOfClass:[self class]
-                                     fromJSONDictionary:json
-                                                  error:error];
-    if (error != nil) {
-        return NO;
-    }
-    
-    NSArray *keysOfJSONProperties = [[[self class] JSONKeyPathsByPropertyKey] allKeys];
-    for (id key in keysOfJSONProperties)
-    {
-        [self mergeValueForKey:key fromModel: model];
-    }
-    return YES;
+    id model = [MTLJSONAdapter modelOfClass:[self class]
+                         fromJSONDictionary:json
+                                      error:nil];
+    [self mergeValuesForKeysFromModel:model];
 }
 
 +(NSString *)includesToString:(ETUserIncludes)includes {
@@ -145,6 +137,22 @@
         [array addObject:@"web_preferences"];
     }
     return [array componentsJoinedByString:@","];
+}
+
+-(BOOL)isEqualTo:(id)object {
+    if (self == object) {
+        return YES;
+    }
+    
+    if (![object isKindOfClass:[self class]]) {
+        return NO;
+    }
+    
+    return [self isEqualToUser:object];
+}
+
+-(BOOL)isEqualToUser:(ETUser *)object {
+    return [self.id isEqualTo:object.id];
 }
 
 @end

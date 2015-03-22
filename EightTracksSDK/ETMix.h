@@ -13,6 +13,12 @@
 #import "ETMixCover.h"
 
 typedef void (^ETRequestCompletion)(NSError *err, id result);
+typedef enum : NSUInteger {
+    ETMixIncludesUser = 1 << 0,
+    ETMixIncludesUserWithFollowed = 1 << 1,
+    ETMixIncludesListened = 1 << 2,
+    ETMixIncludesLiked = 1 << 3
+} ETMixIncludes;
 
 @class ETUser;
 @class ETSmartID;
@@ -25,6 +31,7 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 @property (nonatomic, strong, readonly) NSString   *webPath;
 @property (nonatomic, strong, readonly) NSString   *name;
 @property (nonatomic, strong, readonly) NSString   *mixDescription;
+@property (nonatomic, strong, readonly) NSString   *tagListCache; // @todo add to model
 @property (nonatomic, strong, readonly) NSNumber   *playsCount;
 @property (nonatomic, strong, readonly) NSNumber   *likesCount;
 @property (nonatomic, strong, readonly) NSString   *certification; // @todo enum?
@@ -39,16 +46,15 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 @property (nonatomic, strong, readonly) NSDate     *firstPublishedAt;
 @property (nonatomic, strong, readonly) ETUser     *user;
 
--(ETMix *)initWithDict:(NSDictionary *)dict;
-
 +(void)mixSetBySmartID:(ETSmartID *)smartID
-         withPaginator:(ETPaginator *)paginator
+              includes:(NSString *)includes
+             paginator:(ETPaginator *)paginator
                session:(ETSession *)session
               complete:(ETRequestCompletion)handler;
 
--(void)getForID:(NSNumber *)mixID
-        session:(ETSession *)session
-       complete:(ETRequestCompletion)handler;
+-(void)updateProperties:(NSString *)includes
+                session:(ETSession *)session
+               complete:(ETRequestCompletion)handler;
 
 -(void)like:(BOOL)yesOrNo
     session:(ETSession *)session
