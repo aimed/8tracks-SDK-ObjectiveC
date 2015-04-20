@@ -20,6 +20,9 @@
 
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
+             @"id":@"id",
+             @"name":@"name",
+             @"user":@"user",
              @"webPath":@"web_path",
              @"playsCount":@"plays_count",
              @"tagListCache":@"tag_list_cache",
@@ -35,7 +38,7 @@
     if ([key isEqualToString:@"user"]) {
         return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETUser class]];
     } else if ([key isEqualToString:@"cover"]) {
-        return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETMixCover class]];
+        return [MTLJSONAdapter dictionaryTransformerWithModelClass:[ETMixCover class]];
     } else if ([key isEqualToString:@"likedBySessionUser"]) {
         return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
     } else if ([key isEqualToString:@"tagListCache"]) {
@@ -45,10 +48,10 @@
 }
 
 +(NSValueTransformer *)tagListCacheJSONValueTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSString *string) {
-        return [string componentsSeparatedByString:@", "];
-    } reverseBlock:^id(NSArray *array) {
-        return [array componentsJoinedByString:@", "];
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(NSString *value, BOOL *success, NSError *__autoreleasing *error) {
+        return [value componentsSeparatedByString:@", "];
+    } reverseBlock:^id(NSArray *value, BOOL *success, NSError *__autoreleasing *error) {
+        return [value componentsJoinedByString:@", "];
     }];
 }
 
@@ -79,14 +82,24 @@
             
             for (NSDictionary* mix in mixesJSON)
             {
-                ETMix *mixObj = [MTLJSONAdapter modelOfClass:[ETMix class] fromJSONDictionary:mix error:nil];
-                [mixes addObject:mixObj];
-                [mixObj setRequestedWithSession: session != nil];
+                @autoreleasepool {
+                    ETMix *mixObj = [MTLJSONAdapter modelOfClass:[ETMix class] fromJSONDictionary:mix error:&err];
+                    if (err) break;
+                    [mixes addObject:mixObj];
+                    [mixObj setRequestedWithSession: session != nil];
+                }
             }
             
             // update pagination
-            NSNumber *totalEntries = mixSet[@"pagination"][@"total_entries"];
-            [paginator setTotalEntries:totalEntries];
+            if (!err)
+            {
+                NSNumber *totalEntries = mixSet[@"pagination"][@"total_entries"];
+                [paginator setTotalEntries:totalEntries];
+            }
+            else
+            {
+                NSLog(@"Error transforming JSON to model: %@", err);
+            }
         }
         handler(err, mixes);
     }];

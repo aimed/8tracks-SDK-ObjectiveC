@@ -19,6 +19,10 @@
 
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
+             @"id":@"id",
+             @"login":@"login",
+             @"bio":@"bio",
+             //@"collections":@"collections", @TODO
              @"webPath":@"web_path",
              @"followsCount":@"follows_count",
              @"followersCount":@"followers_count",
@@ -35,24 +39,16 @@
 
 +(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     if ([key isEqualToString:@"avatar"]) {
-        return [self avatarJSONValueTransformer];
+        return [MTLJSONAdapter dictionaryTransformerWithModelClass:[ETUserAvatar class]];
     } else if ([key isEqualToString:@"presetSmartIDs"]) {
         return [self presetSmartIDsValueTransformer];
     } else if ([key isEqualToString:@"collections"]) {
-        return [self collectionJSONValueTransformer];
+        return [MTLJSONAdapter arrayTransformerWithModelClass:[ETMixSet class]];
     } else if ([key isEqualToString:@"topTags"]) {
     } else if ([key isEqualTo:@"recentMixes"]) {
-        return [MTLValueTransformer mtl_JSONArrayTransformerWithModelClass:[ETMix class]];
+        return [MTLJSONAdapter arrayTransformerWithModelClass:[ETMix class]];
     }
     return nil;
-}
-
-+(NSValueTransformer *)avatarJSONValueTransformer {
-    return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETUserAvatar class]];
-}
-
-+(NSValueTransformer *)collectionJSONValueTransformer {
-    return [MTLValueTransformer mtl_JSONArrayTransformerWithModelClass:[ETMixSet class]];
 }
 
 +(NSDictionary *)encodingBehaviorsByPropertyKey {
@@ -62,7 +58,7 @@
 }
 
 +(NSValueTransformer *)presetSmartIDsValueTransformer {
-    return [MTLValueTransformer transformerWithBlock:^NSArray *(NSArray *presets) {
+    return [MTLValueTransformer transformerUsingForwardBlock:^NSArray *(NSArray *presets, BOOL *success, NSError **error) {
         NSMutableArray *smartIDs = [NSMutableArray new];
         for (NSString *smartIDString in presets)
         {

@@ -10,7 +10,7 @@
 
 @implementation ETMixCover
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
-    return @{};
+    return [NSDictionary mtl_identityPropertyMapWithModel:[self class]];
 }
 +(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];

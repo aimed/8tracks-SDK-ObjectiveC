@@ -27,7 +27,7 @@
         if (!err) {
             mixSets = [MTLJSONAdapter modelsOfClass:[ETMixSet class]
                                       fromJSONArray:result[@"mix_cluster"][@"mix_sets"]
-                                              error:nil];
+                                              error:&err];
         }
         handler(err,(NSArray *)mixSets);
     }];

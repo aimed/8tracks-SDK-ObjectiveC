@@ -20,7 +20,7 @@
 +(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     if ([key isEqualToString:@"mixes"])
     {
-        return [MTLValueTransformer mtl_JSONArrayTransformerWithModelClass:[ETMix class]];
+        return [MTLJSONAdapter arrayTransformerWithModelClass:[ETMix class]];
     }
     else if ([key isEqualToString:@"smartID"])
     {
