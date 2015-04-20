@@ -12,6 +12,8 @@
 @implementation ETMixSet
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
+             @"name":@"name",
+             @"mixes":@"mixes",
              @"webPath":@"web_path",
              @"smartID":@"smart_id"
              };

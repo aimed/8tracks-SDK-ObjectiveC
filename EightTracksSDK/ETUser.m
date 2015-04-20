@@ -22,7 +22,7 @@
              @"id":@"id",
              @"login":@"login",
              @"bio":@"bio",
-             //@"collections":@"collections", @TODO
+             @"collections":@"collections",
              @"webPath":@"web_path",
              @"followsCount":@"follows_count",
              @"followersCount":@"followers_count",

@@ -11,9 +11,9 @@
 
 @implementation ETSmartIDValueTransformer
 +(MTLValueTransformer *)transformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^ETSmartID *(NSString *string) {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(NSString *string, BOOL *success, NSError **error) {
         return [ETSmartID smartIDFromString:string];
-    } reverseBlock:^NSString *(ETSmartID *smartID) {
+    } reverseBlock:^id(ETSmartID *smartID, BOOL *success, NSError **error) {
         return [smartID description];
     }];
 }

@@ -13,6 +13,7 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 
 @class ETSmartID;
 @class ETUser;
+
 @interface ETMixSet : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) ETSmartID *smartID;
 @property (nonatomic, strong) NSString *name;
