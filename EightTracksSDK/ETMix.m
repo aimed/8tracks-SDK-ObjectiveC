@@ -36,7 +36,7 @@
 
 +(NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     if ([key isEqualToString:@"user"]) {
-        return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[ETUser class]];
+        return [MTLJSONAdapter dictionaryTransformerWithModelClass:[ETUser class]];
     } else if ([key isEqualToString:@"cover"]) {
         return [MTLJSONAdapter dictionaryTransformerWithModelClass:[ETMixCover class]];
     } else if ([key isEqualToString:@"likedBySessionUser"]) {
