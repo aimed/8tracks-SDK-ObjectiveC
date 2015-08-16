@@ -27,7 +27,7 @@ typedef void (^ETRequestCompletion)(NSError *err, id result);
 @property (nonatomic, strong, readwrite) ETSmartID *smartID;
 
 -(instancetype)initWithDict:(NSDictionary *)dict;
--(void)nextMixInSet:(ETRequestCompletion)handler;
+-(void)playNextMixInSet:(ETRequestCompletion)handler;
 -(BOOL)hasTrack;
 -(BOOL)hasNextTrack;
 -(void)nextTrack:(ETRequestCompletion)handler;
